@@ -1,0 +1,152 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0" version="28.2.8">
+  <diagram name="Page-1" id="laqKJogXsfhQYWCpRlH7">
+    <mxGraphModel dx="1426" dy="779" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="hegHo-gH25xHf_xiybCg-1" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="235" width="40" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hegHo-gH25xHf_xiybCg-2" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="90" y="220" as="sourcePoint" />
+            <mxPoint x="170" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hegHo-gH25xHf_xiybCg-3" value="éliminer une case" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="60" width="230" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hegHo-gH25xHf_xiybCg-4" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="100" y="280" as="sourcePoint" />
+            <mxPoint x="230" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hegHo-gH25xHf_xiybCg-5" value="Mettre un drapeau" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="235" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="hegHo-gH25xHf_xiybCg-6" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="99.5" as="sourcePoint" />
+            <mxPoint x="510" y="99.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hegHo-gH25xHf_xiybCg-7" value="éliminer toutes les cases vides connexes" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="530" y="40" width="210" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="hegHo-gH25xHf_xiybCg-8" value="" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="1">
+          <mxGeometry x="354" y="370" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hegHo-gH25xHf_xiybCg-9" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="hegHo-gH25xHf_xiybCg-8" parent="1" target="hegHo-gH25xHf_xiybCg-21">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="370" y="515" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="369" y="470" />
+              <mxPoint x="365" y="470" />
+              <mxPoint x="365" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hegHo-gH25xHf_xiybCg-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="hegHo-gH25xHf_xiybCg-10" target="hegHo-gH25xHf_xiybCg-11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="370" y="875" />
+              <mxPoint x="370" y="875" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hegHo-gH25xHf_xiybCg-10" value="cliquer sur une case&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="309" y="735" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hegHo-gH25xHf_xiybCg-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="hegHo-gH25xHf_xiybCg-11" target="hegHo-gH25xHf_xiybCg-14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="370" y="1135" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hegHo-gH25xHf_xiybCg-20" value="Oui" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="hegHo-gH25xHf_xiybCg-19">
+          <mxGeometry x="-0.2" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hegHo-gH25xHf_xiybCg-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="hegHo-gH25xHf_xiybCg-11" target="hegHo-gH25xHf_xiybCg-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hegHo-gH25xHf_xiybCg-39" value="Non" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="hegHo-gH25xHf_xiybCg-38">
+          <mxGeometry x="-0.1392" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hegHo-gH25xHf_xiybCg-11" value="Est-ce que c&#39;est une bombe ?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="314.5" y="905" width="109" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="hegHo-gH25xHf_xiybCg-14" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="1">
+          <mxGeometry x="354" y="1135" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hegHo-gH25xHf_xiybCg-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="hegHo-gH25xHf_xiybCg-21" target="hegHo-gH25xHf_xiybCg-14">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="195" y="1117" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="143" y="490" />
+              <mxPoint x="143" y="1150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hegHo-gH25xHf_xiybCg-26" value="Non" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="hegHo-gH25xHf_xiybCg-24">
+          <mxGeometry x="0.0521" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hegHo-gH25xHf_xiybCg-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="hegHo-gH25xHf_xiybCg-21" target="hegHo-gH25xHf_xiybCg-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hegHo-gH25xHf_xiybCg-21" value="Est-ce qu&#39;il reste des bombes ?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="312" y="435" width="115" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="hegHo-gH25xHf_xiybCg-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="hegHo-gH25xHf_xiybCg-27">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hegHo-gH25xHf_xiybCg-35" value="Oui" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="hegHo-gH25xHf_xiybCg-29">
+          <mxGeometry x="-0.1139" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hegHo-gH25xHf_xiybCg-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="hegHo-gH25xHf_xiybCg-27" target="hegHo-gH25xHf_xiybCg-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hegHo-gH25xHf_xiybCg-34" value="Non" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="hegHo-gH25xHf_xiybCg-31">
+          <mxGeometry x="-0.3" y="-4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hegHo-gH25xHf_xiybCg-27" value="Est-ce que le joueur pose un drapeau" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="317" y="565" width="104" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="hegHo-gH25xHf_xiybCg-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="hegHo-gH25xHf_xiybCg-30" target="hegHo-gH25xHf_xiybCg-10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="570" y="765" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hegHo-gH25xHf_xiybCg-30" value="Poser un dreapeau" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="590" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hegHo-gH25xHf_xiybCg-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="hegHo-gH25xHf_xiybCg-37" target="hegHo-gH25xHf_xiybCg-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="660" y="375" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="700" y="385" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hegHo-gH25xHf_xiybCg-37" value="découvre les cases vides connexes et affiche le nombre de bombes proches de chacune" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="735" width="140" height="110" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
