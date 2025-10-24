@@ -1,1 +1,1 @@
-Projet de démineur en orientéé objet python.
+Projet de démineur en orientée objet python.
