@@ -104,7 +104,8 @@ class Grille:
                 break
                 
             else: 
-                case_choisie.cachée = False
+                self.suppression(l,c)
+                # case_choisie.cachée = False
                 # for i in range(-1,2):    # Itération sur les voisins de la case testée
                 #     for j in range(-1,2):
                                                    
@@ -117,8 +118,40 @@ class Grille:
                 #             x = max(0,min(l+i,self.taille[0]-1))    #Limite des bords gauche-droite
                 #             y = max(0,min(c+j,self.taille[1]-1))    #Limite des bords haut-bas 
                 #             self.grid[x,y].cachée = False
-        print("Félicitations, vous avez gagné")
+                
+        if self.nb_bombes == 0:
+            print("Félicitations, vous avez gagné")
+            
+    def suppression(self,l,c):
         
+        Voisins = []
+        print(l,c)
+        self.grid[l,c].cachée = False
+        
+        for i in range(-1,2):
+            for j in range(-1,2):
+            
+                if i == 0 and j == 0:
+                    pass
+                else:
+                    Voisins.append(self.grid[l+i,c+j])
+                    
+        for voisin in Voisins:
+            
+            if voisin.valeur != 0:
+                pass
+            else:
+                
+                try:
+                    x = max(0,min(l+i,self.taille[0]-1))    
+                    y = max(0,min(c+j,self.taille[1]-1))
+                    print("coordonnées du voisin récursif: " + str(l+x) + str(j+y))
+                    self.suppression(l+x,c+y)
+                except:
+                    pass
+                
+                
+                
 class Cases:
     
     
@@ -148,5 +181,5 @@ class Cases:
         
 if __name__ == "__main__":
     
-    G = Grille((10,10),40)
+    G = Grille((10,10),10)
     G.play()
