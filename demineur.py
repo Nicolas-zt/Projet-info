@@ -70,7 +70,7 @@ class Grille:
     
     def play(self):
         
-        
+        self.rec_used = []
         while self.nb_bombes > 0:
             
             print(self)
@@ -124,7 +124,8 @@ class Grille:
             
     def suppression(self,l,c):
         
-        Voisins = []
+        # Voisins = []
+        self.rec_used.append([l,c])
         print(l,c)
         self.grid[l,c].cachée = False
         
@@ -133,21 +134,36 @@ class Grille:
             
                 if i == 0 and j == 0:
                     pass
+                
                 else:
                     x = max(0,min(l+i,self.taille[0]-1))    
                     y = max(0,min(c+j,self.taille[1]-1))
-                    Voisins.append(self.grid[x,y])
+                    # Voisins.append(self.grid[x,y])
                     
-        for voisin in Voisins:
+                    if self.grid[x,y].valeur != 0 and self.grid[x,y].valeur != -1:
+                        self.grid[x,y].cachée = False
+                        
+                    elif self.grid[x,y].valeur == 0 and [x,y] not in self.rec_used:
+                       
+                        x = max(0,min(l+i,self.taille[0]-1))    
+                        y = max(0,min(c+j,self.taille[1]-1))
+                        print("coordonnées du voisin récursif: " + str(x) + str(y))
+                        self.suppression(x,y)
+                        
+                    
+                    else:
+                        pass
+                        
+        # for voisin in Voisins:
             
-            if voisin.valeur == 0:
-                voisin.cachée = False
-            else:
+        #     if voisin.valeur != 0:
+        #         voisin.cachée = False
+        #     else:
                
-                x = max(0,min(l+i,self.taille[0]-1))    
-                y = max(0,min(c+j,self.taille[1]-1))
-                print("coordonnées du voisin récursif: " + str(x) + str(y))
-                self.suppression(x,y)
+        #         x = max(0,min(l+i,self.taille[0]-1))    
+        #         y = max(0,min(c+j,self.taille[1]-1))
+        #         print("coordonnées du voisin récursif: " + str(x) + str(y))
+        #         self.suppression(x,y)
  
                 
                 
@@ -181,5 +197,5 @@ class Cases:
         
 if __name__ == "__main__":
     
-    G = Grille((10,10),10)
+    G = Grille((10,10),25)
     G.play()
