@@ -134,21 +134,21 @@ class Grille:
                 if i == 0 and j == 0:
                     pass
                 else:
-                    Voisins.append(self.grid[l+i,c+j])
+                    x = max(0,min(l+i,self.taille[0]-1))    
+                    y = max(0,min(c+j,self.taille[1]-1))
+                    Voisins.append(self.grid[x,y])
                     
         for voisin in Voisins:
             
-            if voisin.valeur != 0:
-                pass
+            if voisin.valeur == 0:
+                voisin.cachée = False
             else:
-                
-                try:
-                    x = max(0,min(l+i,self.taille[0]-1))    
-                    y = max(0,min(c+j,self.taille[1]-1))
-                    print("coordonnées du voisin récursif: " + str(l+x) + str(j+y))
-                    self.suppression(l+x,c+y)
-                except:
-                    pass
+               
+                x = max(0,min(l+i,self.taille[0]-1))    
+                y = max(0,min(c+j,self.taille[1]-1))
+                print("coordonnées du voisin récursif: " + str(x) + str(y))
+                self.suppression(x,y)
+ 
                 
                 
                 
