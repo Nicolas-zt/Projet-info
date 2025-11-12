@@ -1,5 +1,8 @@
 import numpy as np
 import random as rd
+import sys
+import GUI as gui
+from PyQt5.QtWidgets import QWidget, QGridLayout, QPushButton, QApplication
 
 class Grille:
     
@@ -8,8 +11,9 @@ class Grille:
         self.taille = taille
         self.nb_bombes = nb_bombes        
         self.grid_value = np.zeros(taille)
-        
+        self.rec_used = []
         self.grid = np.array( [ [ Cases(False, True) for i in range (taille[0])] for i in range (taille[1])])
+        self.grid_button = np.empty(taille,dtype = QPushButton)
         print(self.grid)
         
         
@@ -68,26 +72,31 @@ class Grille:
     
         
     
-    def play(self):
+    def play(self,interface = True):
         
-        self.rec_used = []
+        if interface == True:
+            app = QApplication(sys.argv)
+            windowExample = gui.basicWindow(self.taille[0],G)
+            windowExample.show()
+            sys.exit(app.exec_())
+        
         while self.nb_bombes > 0:
             
             print(self)
-           
+            print("Il reste : " + str(self.nb_bombes) + " bombes à trouver")
             drapeaux = input("Donnez une liste de cases sur lesquelles mettre un drapeau : " + "\n").split()  #Marquage des cases souhaitées
             
-            if len(drapeaux) != 0:
                 
-                for lc in drapeaux: 
+            for lc in drapeaux: 
 
-                   l,c = int(lc[0]) , int(lc[1])
-                   self.grid[l,c].marquée = True
-                  
-                   
-                   if self.grid[l,c].piégée == True:
-                       self.nb_bombes -= 1
-                    
+               l,c = int(lc[0]) , int(lc[1])
+               self.grid[l,c].marquée = True
+              
+               
+               if self.grid[l,c].valeur == -1:
+                   self.nb_bombes -= 1
+                   print("Il reste : " + str(self.nb_bombes) + " bombes à trouver")
+                
             
             
             
@@ -118,16 +127,17 @@ class Grille:
                 #             x = max(0,min(l+i,self.taille[0]-1))    #Limite des bords gauche-droite
                 #             y = max(0,min(c+j,self.taille[1]-1))    #Limite des bords haut-bas 
                 #             self.grid[x,y].cachée = False
-                
-        if self.nb_bombes == 0:
-            print("Félicitations, vous avez gagné")
+            if self.nb_bombes == 0:
+                print("Félicitations, vous avez gagné")
             
     def suppression(self,l,c):
         
         # Voisins = []
+        print("La case cliquée est la case : " + str(l) + " " + str(c))
         self.rec_used.append([l,c])
         print(l,c)
         self.grid[l,c].cachée = False
+        # self.grid_button[l,c].setText(str(self.grid[l,c].valeur))
         
         for i in range(-1,2):
             for j in range(-1,2):
@@ -183,6 +193,7 @@ class Cases:
         
         if self.cachée == True:
             self.marquée = True
+            
         
         else:
             
@@ -197,5 +208,7 @@ class Cases:
         
 if __name__ == "__main__":
     
-    G = Grille((10,10),25)
-    G.play()
+    
+    G = Grille((2,2),1)
+    G.play(interface = False)
+    
