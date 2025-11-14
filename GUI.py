@@ -7,6 +7,7 @@ from functools import partial
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIcon, QPixmap
 from PyQt5.QtCore import QSize
+from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
 
 class basicWindow(QWidget):
     def __init__(self,shape,grille):
@@ -27,9 +28,12 @@ class basicWindow(QWidget):
         # grid_layout.setColumnStretch(0,0)
         self.setWindowTitle("Basic Grid Layout")
         
+    
+
+        
 class Bouton(QPushButton):
     
-    def __init__(self,x,y,grille):
+    def __init__(self,window,x,y,grille):
         
         super().__init__()
         self.x = x
@@ -41,15 +45,24 @@ class Bouton(QPushButton):
         pixmap = QPixmap("drapeau.png")
         icon = QIcon(pixmap)
         self.setIcon(icon)
+        if self.grille.grid[self.x,self.y].valeur == -1:
+            self.grille.nb_bombes -= 1
         self.setIconSize(QSize(30, 30))
         print("ok")
         
+   
+        
     def mousePressEvent(self, event):
-        # Récupérer la position de clic
-        # item = self.itemAt(event.pos())
+        '''
+        On surcharge l'event click pour différencier le clique droit et gauche (test / drapeau)
+        '''
     
         if event.button() == Qt.LeftButton:
-            self.grille.suppression(self.x,self.y)
+            if self.grille.grid[self.x,self.y].valeur == -1:
+                print("vous avez perdu")
+                
+            else:
+                self.grille.suppression(self.x,self.y)
     
         elif event.button() == Qt.RightButton:
             self.ajout_drapeau()

@@ -5,7 +5,9 @@ import GUI as gui
 from PyQt5.QtWidgets import QWidget, QGridLayout, QPushButton, QApplication
 
 class Grille:
-    
+    '''
+    Classe contenant les fonctiones permettant de jouer
+    '''
     
     def __init__(self,taille,nb_bombes):   
         self.taille = taille
@@ -73,6 +75,10 @@ class Grille:
         
     
     def play(self,interface = True):
+        '''
+        Méthode permettant de jouer. Contient les mécaniques de sélection des cases 
+        sur lesquelles mettre des drapeaux ou tester s'il y a une bombe
+        '''
         
         if interface == True:
             app = QApplication(sys.argv)
@@ -131,13 +137,16 @@ class Grille:
                 print("Félicitations, vous avez gagné")
             
     def suppression(self,l,c):
-        
+        '''
+        Permet de supprimer les cases vides connexes à celle choisie de manière récursive
+
+        '''
         # Voisins = []
         print("La case cliquée est la case : " + str(l) + " " + str(c))
         self.rec_used.append([l,c])
         print(l,c)
         self.grid[l,c].cachée = False
-        # self.grid_button[l,c].setText(str(self.grid[l,c].valeur))
+        self.grid_button[l,c].setText(str(self.grid[l,c].valeur))
         
         for i in range(-1,2):
             for j in range(-1,2):
@@ -179,7 +188,9 @@ class Grille:
                 
                 
 class Cases:
-    
+    '''
+    Cette classe permet d'avoir des cases et en particulier de leur donner des attributs
+    '''
     
     def __init__(self,piégée,cachée,marquée = False,valeur = 0):     
         self.piégée = piégée
@@ -209,6 +220,6 @@ class Cases:
 if __name__ == "__main__":
     
     
-    G = Grille((2,2),1)
-    G.play(interface = False)
+    G = Grille((10,10),15)
+    G.play(interface = True)
     
